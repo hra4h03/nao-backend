@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/processor/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/processor/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/processor",
+  "projects": {
+    "uploader": {
+      "type": "application",
+      "root": "apps/uploader",
+      "entryFile": "main",
+      "sourceRoot": "apps/uploader/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/uploader/tsconfig.app.json"
+      }
+    },
+    "processor": {
+      "type": "application",
+      "root": "apps/processor",
+      "entryFile": "main",
+      "sourceRoot": "apps/processor/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/processor/tsconfig.app.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
+    "storage": {
+      "type": "library",
+      "root": "libs/storage",
+      "entryFile": "index",
+      "sourceRoot": "libs/storage/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/storage/tsconfig.lib.json"
+      }
+    }
+  }
+}
